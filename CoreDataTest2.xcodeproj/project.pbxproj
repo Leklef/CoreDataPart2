@@ -11,10 +11,13 @@
 		7CB1F7F41E051EC30036B281 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F7F31E051EC30036B281 /* AppDelegate.m */; };
 		7CB1F7F71E051EC30036B281 /* CoreDataTest2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F7F51E051EC30036B281 /* CoreDataTest2.xcdatamodeld */; };
 		7CB1F7FA1E051EC30036B281 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F7F91E051EC30036B281 /* MasterViewController.m */; };
-		7CB1F7FD1E051EC30036B281 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F7FC1E051EC30036B281 /* DetailViewController.m */; };
 		7CB1F8001E051EC30036B281 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB1F7FE1E051EC30036B281 /* Main.storyboard */; };
 		7CB1F8021E051EC30036B281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB1F8011E051EC30036B281 /* Assets.xcassets */; };
 		7CB1F8051E051EC30036B281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB1F8031E051EC30036B281 /* LaunchScreen.storyboard */; };
+		7CB1F8111E0523FB0036B281 /* User+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F8101E0523FB0036B281 /* User+Ex.m */; };
+		7CB1F8151E0524990036B281 /* ImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F8141E0524990036B281 /* ImageTransformer.m */; };
+		7CB1F8191E05264C0036B281 /* EmailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1F8181E05264C0036B281 /* EmailsController.m */; };
+		7CB1F81C1E05297E0036B281 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CB1F81B1E05297E0036B281 /* 1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +28,17 @@
 		7CB1F7F61E051EC30036B281 /* CoreDataTest2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest2.xcdatamodel; sourceTree = "<group>"; };
 		7CB1F7F81E051EC30036B281 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		7CB1F7F91E051EC30036B281 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		7CB1F7FB1E051EC30036B281 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		7CB1F7FC1E051EC30036B281 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7CB1F7FF1E051EC30036B281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CB1F8011E051EC30036B281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB1F8041E051EC30036B281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CB1F8061E051EC30036B281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CB1F80F1E0523FB0036B281 /* User+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Ex.h"; sourceTree = "<group>"; };
+		7CB1F8101E0523FB0036B281 /* User+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Ex.m"; sourceTree = "<group>"; };
+		7CB1F8131E0524990036B281 /* ImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTransformer.h; sourceTree = "<group>"; };
+		7CB1F8141E0524990036B281 /* ImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTransformer.m; sourceTree = "<group>"; };
+		7CB1F8171E05264C0036B281 /* EmailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailsController.h; sourceTree = "<group>"; };
+		7CB1F8181E05264C0036B281 /* EmailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailsController.m; sourceTree = "<group>"; };
+		7CB1F81B1E05297E0036B281 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +73,9 @@
 			children = (
 				7CB1F7F21E051EC30036B281 /* AppDelegate.h */,
 				7CB1F7F31E051EC30036B281 /* AppDelegate.m */,
-				7CB1F7F81E051EC30036B281 /* MasterViewController.h */,
-				7CB1F7F91E051EC30036B281 /* MasterViewController.m */,
-				7CB1F7FB1E051EC30036B281 /* DetailViewController.h */,
-				7CB1F7FC1E051EC30036B281 /* DetailViewController.m */,
-				7CB1F7FE1E051EC30036B281 /* Main.storyboard */,
-				7CB1F8011E051EC30036B281 /* Assets.xcassets */,
-				7CB1F8031E051EC30036B281 /* LaunchScreen.storyboard */,
-				7CB1F8061E051EC30036B281 /* Info.plist */,
-				7CB1F7F51E051EC30036B281 /* CoreDataTest2.xcdatamodeld */,
+				7CB1F80C1E0523A20036B281 /* Controller */,
+				7CB1F80D1E0523A70036B281 /* View */,
+				7CB1F80E1E0523B70036B281 /* Model */,
 				7CB1F7EF1E051EC30036B281 /* Supporting Files */,
 			);
 			path = CoreDataTest2;
@@ -82,9 +84,68 @@
 		7CB1F7EF1E051EC30036B281 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7CB1F8061E051EC30036B281 /* Info.plist */,
+				7CB1F8011E051EC30036B281 /* Assets.xcassets */,
+				7CB1F81B1E05297E0036B281 /* 1.jpg */,
 				7CB1F7F01E051EC30036B281 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CB1F80C1E0523A20036B281 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7CB1F8161E05263A0036B281 /* MasterController */,
+				7CB1F81A1E0526510036B281 /* EmailsController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7CB1F80D1E0523A70036B281 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CB1F8031E051EC30036B281 /* LaunchScreen.storyboard */,
+				7CB1F7FE1E051EC30036B281 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7CB1F80E1E0523B70036B281 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CB1F7F51E051EC30036B281 /* CoreDataTest2.xcdatamodeld */,
+				7CB1F8121E0524000036B281 /* UserModel */,
+				7CB1F8131E0524990036B281 /* ImageTransformer.h */,
+				7CB1F8141E0524990036B281 /* ImageTransformer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7CB1F8121E0524000036B281 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				7CB1F80F1E0523FB0036B281 /* User+Ex.h */,
+				7CB1F8101E0523FB0036B281 /* User+Ex.m */,
+			);
+			name = UserModel;
+			sourceTree = "<group>";
+		};
+		7CB1F8161E05263A0036B281 /* MasterController */ = {
+			isa = PBXGroup;
+			children = (
+				7CB1F7F81E051EC30036B281 /* MasterViewController.h */,
+				7CB1F7F91E051EC30036B281 /* MasterViewController.m */,
+			);
+			name = MasterController;
+			sourceTree = "<group>";
+		};
+		7CB1F81A1E0526510036B281 /* EmailsController */ = {
+			isa = PBXGroup;
+			children = (
+				7CB1F8171E05264C0036B281 /* EmailsController.h */,
+				7CB1F8181E05264C0036B281 /* EmailsController.m */,
+			);
+			name = EmailsController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB1F81C1E05297E0036B281 /* 1.jpg in Resources */,
 				7CB1F8051E051EC30036B281 /* LaunchScreen.storyboard in Resources */,
 				7CB1F8021E051EC30036B281 /* Assets.xcassets in Resources */,
 				7CB1F8001E051EC30036B281 /* Main.storyboard in Resources */,
@@ -158,10 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB1F7FD1E051EC30036B281 /* DetailViewController.m in Sources */,
 				7CB1F7FA1E051EC30036B281 /* MasterViewController.m in Sources */,
+				7CB1F8151E0524990036B281 /* ImageTransformer.m in Sources */,
+				7CB1F8111E0523FB0036B281 /* User+Ex.m in Sources */,
 				7CB1F7F71E051EC30036B281 /* CoreDataTest2.xcdatamodeld in Sources */,
 				7CB1F7F41E051EC30036B281 /* AppDelegate.m in Sources */,
+				7CB1F8191E05264C0036B281 /* EmailsController.m in Sources */,
 				7CB1F7F11E051EC30036B281 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

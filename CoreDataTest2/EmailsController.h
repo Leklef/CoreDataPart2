@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  EmailsController.h
 //  CoreDataTest2
 //
 //  Created by Ildar Zalyalov on 17.12.16.
@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTest2+CoreDataModel.h"
+#import "User+Ex.h"
 
-@interface DetailViewController : UIViewController
-
-@property (strong, nonatomic) Event *detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@interface EmailsController : UITableViewController
+@property (nonatomic, strong) User *userModel;
 
 @end
-

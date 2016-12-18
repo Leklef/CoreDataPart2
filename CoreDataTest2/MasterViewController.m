@@ -7,7 +7,7 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "EmailsController.h"
 
 @interface MasterViewController ()
 
@@ -40,10 +40,31 @@
 
 - (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    Event *newEvent = [[Event alloc] initWithContext:context];
-        
+    User *userModel = [[User alloc] initWithContext:context];
+    
+    userModel.firstName = @"SomeName";
+    userModel.lastName = @"Some Last";
+    userModel.avatarImage = [UIImage imageNamed:@"1"];
+    
+    Email *emailModel = [[Email alloc] initWithContext:context];
+    emailModel.title = @"My new message";
+    emailModel.bodyText = @"asjdasod'asm;dlksalmdkaskmdklaslmkdlkmasdlmdas";
+    emailModel.destinationUserName = userModel.getFullName;
+    
+    Email *emailModel2 = [[Email alloc] initWithContext:context];
+    emailModel.title = @"My new message";
+    emailModel.bodyText = @"asjdasod'asm;dlksalmdkaskmdklaslmkdlkmasdlmdas";
+    emailModel.destinationUserName = userModel.getFullName;
+    
+    Email *emailModel3 = [[Email alloc] initWithContext:context];
+    emailModel.title = @"My new message";
+    emailModel.bodyText = @"asjdasod'asm;dlksalmdkaskmdklaslmkdlkmasdlmdas";
+    emailModel.destinationUserName = userModel.getFullName;
+    
     // If appropriate, configure the new managed object.
-    newEvent.timestamp = [NSDate date];
+    [userModel addEmailsObject:emailModel];
+    [userModel addEmailsObject:emailModel2];
+    [userModel addEmailsObject:emailModel3];
         
     // Save the context.
     NSError *error = nil;
@@ -61,11 +82,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Event *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
+        User *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        EmailsController *destContr = [segue destinationViewController];
+        destContr.userModel = object;
     }
 }
 
@@ -85,7 +104,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    Event *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    User *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [self configureCell:cell withEvent:event];
     return cell;
 }
@@ -113,32 +132,34 @@
 }
 
 
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Event *)event {
-    cell.textLabel.text = event.timestamp.description;
+- (void)configureCell:(UITableViewCell *)cell withEvent:(User *)event {
+    cell.textLabel.text = event.getFullName;
+    cell.detailTextLabel.text = event.getEmailCount;
+    cell.imageView.image = (UIImage*)event.avatarImage;
 }
 
 
 #pragma mark - Fetched results controller
 
-- (NSFetchedResultsController<Event *> *)fetchedResultsController
+- (NSFetchedResultsController<User *> *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
-    NSFetchRequest<Event *> *fetchRequest = Event.fetchRequest;
+    NSFetchRequest<User *> *fetchRequest = User.fetchRequest;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:NO];
+//    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:NO];
 
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController<Event *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController<User *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     
     NSError *error = nil;
